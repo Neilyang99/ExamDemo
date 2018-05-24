@@ -39,8 +39,12 @@ public class StationServiceImp implements StationService {
 	public void updateStation(Station station){
 		Station entity = dao.findById(station.getId());
 		if(entity!=null){
+			Date date = new Date();
+		    SimpleDateFormat dtFormat = new SimpleDateFormat("yyyy/MM/dd hh:mm:ss");       
+		    String str = dtFormat.format(date);  
+		    
 			entity.setStationName(station.getStationName());
-			entity.setModifyDate(station.getModifyDate());
+			entity.setModifyDate(str);
 			entity.setStatus("Y");
 		}
 	}

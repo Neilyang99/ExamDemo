@@ -21,14 +21,14 @@
  	<br>
 	<table>
 		<tr>
-			<td>站點</td><td>修改時間</td><td>動作</td>
+			<td>員編</td><td>修改時間</td><td>動作</td>
 		</tr>
-		<c:forEach items="${station}" var="station">
+		<c:forEach items="${user}" var="user">
 		<tr>
-			<td>${station.stationName}</td>
-			<td>${station.modifyDate}</td>
-			<td><a href="<c:url value="/view-${station.id}-station" />">View</a></td>
-			<td><a href="<c:url value="/del-${station.id}-station" />">Del</a></td>
+			<td>${user.employeeID}</td>
+			<td>${user.modifyDate}</td>
+			<td><a href="<c:url value="/view-${user.id}-user" />">View</a></td>
+			<td><a href="<c:url value="/del-${user.id}-user" />">Del</a></td>
 		</tr>
 			
 		</c:forEach>

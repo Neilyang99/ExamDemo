@@ -29,11 +29,8 @@ public class User {
 	@Column(name = "name", nullable = false)
 	private String name;
 	
-	@NotNull
-	@DateTimeFormat(pattern="yyyy/MM/dd hh:mm:ss") 
-	@Column(name = "modifyDate", nullable = false)
-	@Type(type="org.jadira.usertype.dateandtime.joda.PersistentLocalDate")
-	private LocalDate modifyDate;
+	@Column(name = "modifyDate")
+	private String modifyDate;
 	
 	@NotNull
     @Column(name="working", nullable=false)
@@ -63,11 +60,11 @@ public class User {
 		this.name = name;
 	}
 
-	public LocalDate getModifyDate() {
+	public String getModifyDate() {
 		return modifyDate;
 	}
 
-	public void setModifyDate(LocalDate modifyDate) {
+	public void setModifyDate(String modifyDate) {
 		this.modifyDate = modifyDate;
 	}
 
