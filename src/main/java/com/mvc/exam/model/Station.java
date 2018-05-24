@@ -8,10 +8,6 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
-import org.hibernate.annotations.Type;
-import org.joda.time.LocalDate;
-import org.springframework.format.annotation.DateTimeFormat;
-
 @Entity
 @Table(name="Station")
 public class Station {
@@ -25,10 +21,8 @@ public class Station {
 	private String stationName;
 	
 	@NotNull
-	@DateTimeFormat(pattern="yyyy/MM/dd hh:mm:ss") 
-	@Column(name = "modifyDate", nullable = false)
-	@Type(type="org.jadira.usertype.dateandtime.joda.PersistentLocalDate")
-	private LocalDate modifyDate;
+	@Column(name = "modifyDate")
+	private String modifyDate;
 	
 	@NotNull
     @Column(name="Status", nullable=false)
@@ -50,11 +44,11 @@ public class Station {
 		this.stationName = stationName;
 	}
 
-	public LocalDate getModifyDate() {
+	public String getModifyDate() {
 		return modifyDate;
 	}
 
-	public void setModifyDate(LocalDate modifyDate) {
+	public void setModifyDate(String modifyDate) {
 		this.modifyDate = modifyDate;
 	}
 

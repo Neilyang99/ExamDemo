@@ -6,16 +6,38 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Station Registration</title>
+
+<style>
+	
+</style>
+	
 </head>
 <body>
 
+<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
+
 <h2>Registration Form</h2>
  
-	<form:form method="POST" modelAttribute="station">
+ 	<form:form method="POST" modelAttribute="station">
+ 	
+ 		<div><a href="<c:url value='/' />">Menu</a><input type="submit" value="Save"/></div>
+ 	<br>
 	
+		<form:input type="hidden" path="id" id="id"/>
+		<form:input type="hidden" path="modifyDate" id="modifyDate"/>
+		<form:input type="hidden" path="status" id="status" value='Y'/>
+		<table>
+			<tr>
+				<td><label for="StationName">Name: </label> </td>
+				<td><form:input path="StationName" id="StationName"/></td>
+		    </tr>
+	    </table>
 	</form:form>
 	<br/>
-	<br/>
-	Go back to <a href="<c:url value='/list' />">List of All Station</a>
+
+	message : ${msg}
+	<hr/>
+	
+	
 </body>
 </html>

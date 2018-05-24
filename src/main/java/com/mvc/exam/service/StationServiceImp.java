@@ -1,5 +1,7 @@
 package com.mvc.exam.service;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +26,12 @@ public class StationServiceImp implements StationService {
 
 	@Override
 	public void saveStation(Station station) {
+		Date date = new Date();
+	    SimpleDateFormat dtFormat = new SimpleDateFormat("yyyy/MM/dd hh:mm:ss");       
+	    String str = dtFormat.format(date);  
+		
+		station.setModifyDate(str);
+		station.setStatus("Y");
 		dao.saveStation(station);
 	}
 

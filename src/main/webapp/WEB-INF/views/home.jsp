@@ -10,7 +10,7 @@
 
 <table>
 <tr><td><a href="<c:url value='/newStation' />">Add New Station</a></td></tr>
-<tr><td>List Station</td></tr>
+<tr><td><a href="<c:url value='/listStation' />">List Station</a></td></tr>
 <tr><td><a href="<c:url value='/newUser' />">Add New User</a></td></tr>
 </table>
 <br/>
