@@ -5,21 +5,22 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Station List</title>
+<link href="<c:url value='/static/css/bootstrap.css' />" rel="stylesheet"></link>
+<link href="<c:url value='/static/css/app.css' />" rel="stylesheet"></link>
 
 <style>
-		tr:first-child{
-			font-weight: bold;
-			background-color: #C6C9C4;
-		}
+		
 </style>
 	
 </head>
 <body>
-
+<div class="generic-container">
+		<div class="panel panel-default">
  
- 	<div><a href="<c:url value='/' />">Menu</a></div>
- 	<br>
-	<table>
+ 	
+ 	<div class="panel-heading"><span class="lead">站點列表</span></div>
+ 
+	<table class="table table-hover">
 		<tr>
 			<td>站點</td><td>修改時間</td><td>動作</td>
 		</tr>
@@ -27,12 +28,19 @@
 		<tr>
 			<td>${station.stationName}</td>
 			<td>${station.modifyDate}</td>
-			<td><a href="<c:url value="/view-${station.id}-station" />">View</a></td>
-			<td><a href="<c:url value="/del-${station.id}-station" />">Del</a></td>
+			<td><a href="<c:url value="/view-${station.id}-station" />"  class="btn btn-success custom-width">View</a>
+				<a href="<c:url value="/del-${station.id}-station" />" class="btn btn-danger custom-width">Del</a>
+			</td>	
 		</tr>
 			
 		</c:forEach>
 	</table>
+	<br>
+	<div class="form-actions floatRight">
+			<div><a href="<c:url value='/' />" class="btn btn-primary btn-sm">返回</a></div>
+	</div>
 	
+</div>
+</div>	
 </body>
 </html>

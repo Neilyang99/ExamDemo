@@ -5,16 +5,26 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Menu</title>
+<link href="<c:url value='/static/css/bootstrap.css' />" rel="stylesheet"></link>
+<link href="<c:url value='/static/css/app.css' />" rel="stylesheet"></link>
+
+<style type="text/css">
+
+</style>
 </head>
 <body>
-
-<table>
-<tr><td><a href="<c:url value='/newStation' />">Add New Station</a></td></tr>
-<tr><td><a href="<c:url value='/listStation' />">List Station</a></td></tr>
-<tr><td><a href="<c:url value='/newUser' />">Add New User</a></td></tr>
-<tr><td><a href="<c:url value='/listUser' />">List User</a></td></tr>
+<div class="generic-container">
+		<div class="panel panel-default">
+		<center>
+<table  class="table table-hover">
+<tr><td><a href="<c:url value='/newStation' />">新增站點</a></td></tr>
+<tr><td><a href="<c:url value='/listStation' />">站點列表</a></td></tr>
+<tr><td><a href="<c:url value='/newUser' />">新增護士</a></td></tr>
+<tr><td><a href="<c:url value='/listUser' />">護士列表</a></td></tr>
 </table>
-<br/>
+</center>
+</div>
+</div>
 	
 </body>
 </html>
