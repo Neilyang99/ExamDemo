@@ -94,7 +94,7 @@ public class HomeController {
 			System.out.println(result.toString());
 			return "viewStation";
 		}
-		
+		System.out.println("AAAAAAAAAAAAAA--"+station.getStationName());
 		service.updateStation(station);
 		model.addAttribute("msg","Station: "+station.getStationName()+ " updated successfully");
 		return "viewStation";
