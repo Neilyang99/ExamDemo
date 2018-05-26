@@ -11,5 +11,7 @@ public interface UserService {
 	void saveUser(User user);
 	void deleteUserByID(int id);
 	List<User> findAllUser();
+	List<User> findUserByStation(int StationID);
 	void updateUser(User user);
+	boolean isEmpIDUnique(String empID);
 }

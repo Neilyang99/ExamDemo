@@ -1,5 +1,6 @@
 package com.mvc.exam.model;
 
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,10 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
-import org.hibernate.annotations.Type;
 import org.hibernate.validator.constraints.NotEmpty;
-import org.joda.time.LocalDate;
-import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name="User")
@@ -19,13 +17,13 @@ public class User {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private Integer id;
 	
 	@NotEmpty
 	@Column(name = "employeeID", unique=true, nullable = false)
 	private String employeeID;
 	
-	@NotNull
+	@NotEmpty
 	@Column(name = "name", nullable = false)
 	private String name;
 	
@@ -36,11 +34,15 @@ public class User {
     @Column(name="working", nullable=false)
     private String working;
 
-	public int getId() {
+	
+	@Column(name="stationID", nullable=false)
+    private Integer stationID;
+	
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -74,5 +76,28 @@ public class User {
 
 	public void setWorking(String working) {
 		this.working = working;
+	}
+
+	
+	
+	@Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+        if (!(obj instanceof User)) return false;
+        User other = (User) obj;
+        if (id == null) {
+            if (other.id != null) return false;
+        } else if (!id.equals(other.id)) return false;
+        
+        return true;
+    }
+
+	public Integer getStationID() {
+		return stationID;
+	}
+
+	public void setStationID(Integer stationID) {
+		this.stationID = stationID;
 	}
 }

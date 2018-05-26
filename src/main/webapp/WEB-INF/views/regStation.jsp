@@ -28,7 +28,7 @@
 <div class="generic-container">
 <div class="well lead">新增站點資料</div>
  
- 	<form:form method="POST" modelAttribute="station">
+ 	<form:form method="POST" modelAttribute="station" class="form-horizontal">
  	
  		<div ><a href="<c:url value='/' />">返回</a> &nbsp; <input type="submit" value="儲存" class="btn btn-info btn-sm"></div>
  	<br>
@@ -42,6 +42,7 @@
 			<label class="col-md-3 control-lable" for="StationName" style="width:90px">站點名稱</label>
 				<div class="col-md-7">
 					<form:input type="text" path="StationName" id="StationName"  maxlength="30" class="form-control input-sm"/>
+					<form:errors path="StationName" cssClass="error"/>
 				</div>
 			</div>
 		</div>

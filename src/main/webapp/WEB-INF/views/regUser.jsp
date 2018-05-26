@@ -7,6 +7,7 @@
 <title>User Registration</title>
 <link href="<c:url value='/static/css/bootstrap.css' />" rel="stylesheet"></link>
 <link href="<c:url value='/static/css/app.css' />" rel="stylesheet"></link>
+
 <style>
 	a:link, a:visited {
 	    background-color: #286090;
@@ -18,14 +19,14 @@
 	    border-radius: 3px;
 	}
 </style>
-	
+
 </head>
 <body>
 
 <div class="generic-container">
 
  
- 	<form:form method="POST" modelAttribute="user">
+ 	<form:form method="POST" modelAttribute="user"  name="form1" class="form-horizontal">
  	
  		<div>
  			
@@ -54,6 +55,7 @@
 			<label class="col-md-3 control-lable" for="employeeID" style="width:90px">員工編號</label>
 				<div class="col-md-7">
 					<form:input type="text" path="employeeID" id="employeeID"  maxlength="10" class="form-control input-sm"/>
+					<form:errors path="employeeID" cssClass="error"/>
 				</div>
 			</div>
 		</div>	
@@ -62,9 +64,19 @@
 			<label class="col-md-3 control-lable" for="name" style="width:90px">護士姓名</label>
 				<div class="col-md-7">
 					<form:input type="text" path="name" id="name"  maxlength="6" class="form-control input-sm"/>
+					<form:errors path="name" cssClass="error"/>
 				</div>
 			</div>
 		</div>
+		
+		<div class="row">
+            <div class="form-group col-md-12">
+                <label class="col-md-3 control-lable" for="stationID"  style="width:90px">分配站點</label>
+                <div class="col-md-7">
+                    <form:select path="stationID" items="${stationList}" multiple="false" class="form-control input-sm" />
+                </div>
+            </div>
+        </div>
 	</form:form>
 	<br/>
 

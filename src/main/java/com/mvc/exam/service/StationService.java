@@ -12,4 +12,5 @@ public interface StationService {
 	void deleteStationById(int id);
 	Station findStationById(int id);
 	List<Station> findAllStation();
+	boolean isStationNameUnique(String name);
 }

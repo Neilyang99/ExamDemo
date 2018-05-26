@@ -66,6 +66,19 @@ public class StationServiceImp implements StationService {
 		return dao.findAllStation();
 	}
 	
-	
+	/**
+	 * check station name is unique or not
+	 * @param id
+	 * @param name
+	 * @return
+	 */
+	public boolean isStationNameUnique(String name) {
+		Station station = dao.findStationByName(name);
+		if( station == null || ((name != null) && (!station.getStationName().equals(name)))){
+			return true;
+		}else{
+			return false;
+		}
+	}
 
 }

@@ -11,4 +11,5 @@ public interface StationDao {
 	void deleteStationById(int id);
 	Station findStationById(int id);
 	List<Station> findAllStation();
+	Station findStationByName(String name);
 }

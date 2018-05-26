@@ -36,6 +36,7 @@ public class UserServiceImp implements UserService {
 	    user.setModifyDate(str);
 	    user.setWorking("Y");
 	    
+	    
 		dao.saveUser(user);
 	}
 
@@ -62,8 +63,26 @@ public class UserServiceImp implements UserService {
 			entity.setEmployeeID(user.getEmployeeID());
 			entity.setName(user.getName());
 			entity.setModifyDate(str);
+			entity.setStationID(user.getStationID());
 		}
 		
 	}
+
+	@Override
+	public List<User> findUserByStation(int StationID) {
+		// TODO Auto-generated method stub
+		return dao.findUserByStation(StationID);
+	}
+
+	@Override
+	public boolean isEmpIDUnique(String empID) {
+		User user = dao.findByEmpID(empID);
+		if( user == null || ((empID != null) && (!user.getEmployeeID().equals(empID)))){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
 
 }

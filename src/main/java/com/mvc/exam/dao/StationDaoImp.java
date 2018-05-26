@@ -46,4 +46,13 @@ public class StationDaoImp extends AbstractDao<Integer,Station> implements Stati
 		return station;
 	}
 
+	@Override
+	@SuppressWarnings("unchecked")
+	public Station findStationByName(String name) {
+		Criteria crit = createEntityCriteria();
+        crit.add(Restrictions.eq("stationName", name));
+		Station station = (Station)crit.uniqueResult();
+		return station;
+	}
+
 }

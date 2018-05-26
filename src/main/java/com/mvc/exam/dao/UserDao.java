@@ -11,4 +11,5 @@ public interface UserDao {
 	void saveUser(User user);
 	void deleteUserByID(int id);
 	List<User> findAllUser();
+	List<User> findUserByStation(int stationId);
 }

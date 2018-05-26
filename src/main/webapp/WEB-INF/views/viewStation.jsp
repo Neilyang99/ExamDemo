@@ -40,16 +40,25 @@
 		</div>
 		
  	</form:form>
- 	
+ 	message : ${msg}
  	<br/>
- 	站點護士列表
+ 	<br/>
+ 	<div class="lead">站點護士列表</div>
+ 	
  	<table class="table table-hover">
 		<tr>
 			<td>員工編號</td><td>加入時間</td>
 		</tr>
+		<c:forEach items="${user}" var="user">
+		<tr>
+			<td>${user.employeeID}</td>
+			<td>${user.modifyDate}</td>
+		</tr>
+			
+		</c:forEach>
 	</table>	
  	
- 	message : ${msg}
+ 	
 </div>
  
 </body>

@@ -3,6 +3,7 @@ package com.mvc.exam.dao;
 import java.util.List;
 
 import org.hibernate.Criteria;
+import org.hibernate.Hibernate;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
@@ -14,7 +15,9 @@ public class UserDaoImp extends AbstractDao<Integer,User> implements UserDao {
 
 	@Override
 	public User findByID(int id) {
-		return getByKey(id);
+		User user = getByKey(id);
+        
+		return user;
 	}
 
 	@Override
@@ -22,6 +25,7 @@ public class UserDaoImp extends AbstractDao<Integer,User> implements UserDao {
 		Criteria crit = createEntityCriteria();
         crit.add(Restrictions.eq("employeeID", empID));//get data by employee id
         User user = (User)crit.uniqueResult();
+        
 		return user;
 	}
 
@@ -44,4 +48,13 @@ public class UserDaoImp extends AbstractDao<Integer,User> implements UserDao {
 		return user;
 	}
 
+	@Override
+	public List<User> findUserByStation(int stationId) {
+		Criteria criteria = createEntityCriteria().addOrder(Order.asc("employeeID"));
+		criteria.add(Restrictions.eq("stationID", stationId));
+		List<User> user =(List<User>)criteria.list();
+		return user;
+	}
+	
+	
 }
