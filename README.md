@@ -1,7 +1,7 @@
 # ExamDemo
 Create a project for exam by using spring mvc and hibernate
 
-springframework.version:4.0.6
+springframework.version:4.1.7
 
 hibernate.version:4.3.6.Final
 
