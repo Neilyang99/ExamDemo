@@ -1,0 +1,21 @@
+CREATE SCHEMA `test` DEFAULT CHARACTER SET utf8 ;
+
+create table User
+(
+   Id                   int not null auto_increment,
+   EmployeeID           varchar(10) not null,
+   Name                 varchar(6) not null,
+   ModifyDate           varchar(19),
+   Working              char not null,
+   StationID            int,
+   primary key (Id)
+);
+
+create table Station
+(
+   Id                   int not null auto_increment,
+   StationName          varchar(30) not null,
+   ModifyDate           varchar(19),
+   Status               char,
+   primary key (Id)
+);
